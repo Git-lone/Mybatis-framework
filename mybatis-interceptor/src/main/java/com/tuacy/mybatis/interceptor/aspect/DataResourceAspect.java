@@ -56,14 +56,14 @@ public class DataResourceAspect {
     @Value("${default.datasource.name}")
     String defaultDatasourceName;
 
-  /**
-   * 环绕通知，可以在方法执行前后做切面处理，也可以提前终止原方法的执行
-   * ProceedingJoinpoint 继承了 JoinPoint。是在JoinPoint的基础上暴露出 proceed 这个方法。
-   * 环绕通知 = 前置 + 目标方法执行 + 后置通知，proceed方法就是用于启动目标方法的执行。暴露出这个方法，就能支持 aop:around 这种切面。
-   * （Proceedingjoinpoint 仅支持环绕通知@Around，而其他的几种切面只需要用到JoinPoint，这也是环绕通知和前置、后置通知方法的一个最大区别。这跟切面类型有关）
-   */
-  @Around("DataResourceMethodPoint() || DataResourceClassPoint() || DataResourceFieldPoint()")
-  public Object dataPermPerformance(ProceedingJoinPoint pjp) throws Throwable {
+    /**
+     * 环绕通知，可以在方法执行前后做切面处理，也可以提前终止原方法的执行
+     * ProceedingJoinpoint 继承了 JoinPoint。是在JoinPoint的基础上暴露出 proceed 这个方法。
+     * 环绕通知 = 前置 + 目标方法执行 + 后置通知，proceed方法就是用于启动目标方法的执行。暴露出这个方法，就能支持 aop:around 这种切面。
+     * （Proceedingjoinpoint 仅支持环绕通知@Around，而其他的几种切面只需要用到JoinPoint，这也是环绕通知和前置、后置通知方法的一个最大区别。这跟切面类型有关）
+     */
+    @Around("DataResourceMethodPoint() || DataResourceClassPoint() || DataResourceFieldPoint()")
+    public Object dataPermPerformance(ProceedingJoinPoint pjp) throws Throwable {
         //获取注解标注的方法
         MethodSignature methodSignature = (MethodSignature)pjp.getSignature();
         Method method = methodSignature.getMethod();
@@ -123,7 +123,7 @@ public class DataResourceAspect {
         // Object result = pjp.proceed();
         // do someThing like do logs
         // return pjp.proceed();  或者  return "其他结果";
-  }
+    }
 
     public boolean tableValid(String table) {
         if (StringUtils.isBlank(dataResourceProperties.getPermTable())
