@@ -1,5 +1,6 @@
 package com.tuacy.mybatis.interceptor.service.impl;
 
+import com.tuacy.mybatis.interceptor.aspect.DataResource;
 import com.tuacy.mybatis.interceptor.entity.vo.UserInfoVo;
 import com.tuacy.mybatis.interceptor.interceptor.page.PageView;
 import com.tuacy.mybatis.interceptor.mapper.UserManageMapper;
@@ -29,6 +30,7 @@ public class UserManageServiceImpl implements IUserManageService {
     /**
      * 分页获取所有的用户列表信息
      */
+    @DataResource("us")
     @Transactional(rollbackFor = Exception.class, readOnly = true)
     @Override
     public PageView<UserInfoVo> getUserListPage(PageView<UserInfoVo> pageView) {
