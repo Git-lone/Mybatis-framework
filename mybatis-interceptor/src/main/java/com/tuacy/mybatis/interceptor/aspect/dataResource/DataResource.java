@@ -1,4 +1,4 @@
-package com.tuacy.mybatis.interceptor.aspect;
+package com.tuacy.mybatis.interceptor.aspect.dataResource;
 
 import java.lang.annotation.*;
 

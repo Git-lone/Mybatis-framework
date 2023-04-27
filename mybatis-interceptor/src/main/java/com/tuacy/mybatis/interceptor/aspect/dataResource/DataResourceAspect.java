@@ -1,4 +1,4 @@
-package com.tuacy.mybatis.interceptor.aspect;
+package com.tuacy.mybatis.interceptor.aspect.dataResource;
 
 
 import java.lang.reflect.Method;
@@ -29,13 +29,13 @@ public class DataResourceAspect {
     /**
      * @annotation用于拦截标注在方法上面的注解
      */
-    @Pointcut("@annotation(com.tuacy.mybatis.interceptor.aspect.DataResource)")
+    @Pointcut("@annotation(com.tuacy.mybatis.interceptor.aspect.dataResource.DataResource)")
     public void DataResourceMethodPoint() {}
 
     /**
      * @within用于拦截标注在类上面的注解
      */
-    @Pointcut("@within(com.tuacy.mybatis.interceptor.aspect.DataResource)")
+    @Pointcut("@within(com.tuacy.mybatis.interceptor.aspect.dataResource.DataResource)")
     public void DataResourceClassPoint() {}
 
     /**

@@ -1,4 +1,4 @@
-package com.tuacy.mybatis.interceptor.aspect;
+package com.tuacy.mybatis.interceptor.aspect.dataResource;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

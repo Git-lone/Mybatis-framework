@@ -1,6 +1,6 @@
 package com.tuacy.mybatis.interceptor.service.impl;
 
-import com.tuacy.mybatis.interceptor.aspect.DataResource;
+import com.tuacy.mybatis.interceptor.aspect.dataResource.DataResource;
 import com.tuacy.mybatis.interceptor.entity.vo.UserInfoVo;
 import com.tuacy.mybatis.interceptor.interceptor.page.PageView;
 import com.tuacy.mybatis.interceptor.mapper.UserManageMapper;
