@@ -1,11 +1,12 @@
 package com.tuacy.mybatis.interceptor;
 
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 @SpringBootApplication
 //@EnableDiscoveryClient
@@ -16,8 +17,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class MyBatisInterceptorApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MyBatisInterceptorApplication.class, args);
+        Matcher matcher = Pattern.compile("(\\w+[-]?)([0-9]{4}[a|b|c]?)").matcher("gsk0808sk");
+        boolean matches = matcher.matches();
+        System.out.println(matches);
     }
-
 
 }
