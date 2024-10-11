@@ -31,11 +31,11 @@ public class TestMock {
 
     @Test
     public void testRegex(){
-        String name = "TC0614aL";
+        String name = "TC0101";
         // Pattern pattern = Pattern.compile("(\\w+[-]?)([0-9]{4}[a|b|c]?)(L|R|LR)?");
-        Pattern pattern = Pattern.compile("(\\w+[-]?)([0-9]{2}[`]?[0-9]{2}[`]?)(L|R|LR)?");
+        Pattern pattern = Pattern.compile("([\\w_\\-^%&'`,;=?$]+)([0-9]{2}[‘’`']?[0-9]{2}[‘’`']?).*");
         Matcher matcher = pattern.matcher(name);
-        matcher.matches();
+        System.out.println(matcher.matches());
     }
 
     @Test
@@ -152,6 +152,20 @@ public class TestMock {
         Long num = 46L;
         String format = String.format("%03d", num);
         System.out.println("format: " + format);
+    }
+
+    @Test
+    public void testSubString() {
+        String input = "sash-1-left";
+        String replacePrefix = input.replace("sash-", "");
+        if (replacePrefix.contains("-")){
+            String substring = replacePrefix.substring(0, replacePrefix.indexOf("-"));
+            // int i = Integer.parseInt(substring);
+            System.out.println(substring);
+        }else {
+            int i = Integer.parseInt(replacePrefix);
+            System.out.println(i);
+        }
     }
 
     @Test
