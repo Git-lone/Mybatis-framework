@@ -29,7 +29,7 @@ import java.util.*;
       type = ResultSetHandler.class, // 对应四种类型中的一种； mybatis拦截器默认可拦截的类型只有四种，按照执行顺序：
                                      // Executor：拦截执行器的方法。
                                      // ParameterHandler：拦截参数的处理。
-                                     // ResultHandler：拦截结果集的处理。
+                                     // ResultSetHandler：拦截结果集的处理。
                                      // StatementHandler：拦截Sql语法构建的处理。
       method = "handleResultSets", // 对应接口中的哪个方法；
       args = {Statement.class} // 对应哪一个方法参数类型（因为可能存在重载方法），三个参数对应的就是ResultSetHandler中的handleResultSets(Statement stmt)方法；
